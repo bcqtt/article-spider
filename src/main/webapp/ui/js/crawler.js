@@ -25,19 +25,39 @@ $(document).ready(function(){
 	    }, {
 	        field: 'targetUrlTemplate',
 	        title: '目标URL模板'
+	    }, {
+	        field: 'status',
+	        title: '状态',
+	        visible: false
 	    }],
 	    pagination: true,
 	    //pageNumber: 1,
 	    //pageSize: 3,
 	    //showPaginationSwitch:true,
-		pageList: [10, 20, 50, 100]
+		pageList: [10, 20, 50, 100],
+		rowStyle: function(row,index){
+			if(row.status==1){
+				return {classes:'success'};
+			}
+			return {};
+		}
 	});
 	
 	$("#addCrawlerBtn").on("click",function(){
 		$("#crawlerForm").attr("action","crawler/saveCrawler?opt=add");
 	});
-	$("#addCrawlerBtn").on("click",function(){
-		$("#crawlerForm").attr("action","crawler/saveCrawler?opt=add");
+	$("#editCrawlerBtn").on("click",function(){
+		$("#crawlerForm").attr("action","crawler/saveCrawler?opt=edit");
+		var select_datas = $('#crawler-table').bootstrapTable('getSelections');
+		if(select_datas.length>0){
+			var cra = select_datas[0];
+		    $("#crawlerId").val(cra.id);
+		    $("#crawlerName").val(cra.name);
+		    $("#startUrl").val(cra.startUrl);
+		    $("#startUrlTemplate").val(cra.startUrlTemplate);
+		    $("#targetUrlTemplate").val(cra.targetUrlTemplate);
+		    $("#crawlerStatus").val(cra.status);
+		}
 	});
 	
 	$("#saveBtn").on("click",function(){

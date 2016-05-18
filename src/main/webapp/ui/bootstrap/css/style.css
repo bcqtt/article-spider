@@ -503,6 +503,7 @@ a.brand span {
             box-shadow: none;
 }
 
+/*
 .dropdown-menu:after,
 .dropdown-menu:before {
 	top: -1px;
@@ -512,6 +513,7 @@ a.brand span {
 	border-left: 9px solid transparent;
 	content: '';
 }
+*/
 
 .dropdown-menu {
   	position: absolute;
@@ -1143,17 +1145,17 @@ ul.messages li .message {
 
 .quick-button-small:hover {
 	text-decoration: none;
-	border-color: #a5a5a5;
-	color: #444444;
+	border-color: #D35100;
+	color: #D35100;
 	text-shadow: 0 1px 0px rgba(255, 255, 255, 1);
 	-webkit-transition: all 0.3s ease;
 	-moz-transition: all 0.3s ease;
 	-ms-transition: all 0.3s ease;
 	-o-transition: all 0.3s ease;
 	transition: all 0.3s ease;
-  	-webkit-box-shadow: 0px 0px 3px rgba(0,0,0,.25);
-       -moz-box-shadow: 0px 0px 3px rgba(0,0,0,.25);
-          	box-shadow: 0px 0px 3px rgba(0,0,0,.25);
+  	-webkit-box-shadow: 0px 0px 3px rgba(211, 81, 0,.50);
+       -moz-box-shadow: 0px 0px 3px rgba(211, 81, 0,.50);
+          	box-shadow: 0px 0px 3px rgba(211, 81, 0,.50);
 }
 
 .quick-button-small:hover .notification {
@@ -1516,6 +1518,7 @@ ul.chat.metro li.right .message .arrow {
 /* Buttons
 =================================================================== */
 
+/*
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -1531,7 +1534,7 @@ ul.chat.metro li.right .message .arrow {
   -webkit-border-radius: 0px !important;
   border-radius: 0px !important;
 }
-
+*/
 .btn i {
 	margin-top: 2px;
 }
@@ -1542,11 +1545,13 @@ ul.chat.metro li.right .message .arrow {
   outline-offset: -2px;
 }
 
+
 .btn:hover,
 .btn:focus {
   color: #fff;
   text-decoration: none;
 }
+
 
 .btn:active,
 .btn.active {
@@ -1555,6 +1560,7 @@ ul.chat.metro li.right .message .arrow {
   -webkit-box-shadow: none;
           box-shadow: none;
 }
+
 
 .btn.disabled,
 .btn[disabled],
@@ -1565,6 +1571,7 @@ fieldset[disabled] .btn {
   -webkit-box-shadow: none;
           box-shadow: none;
 }
+
 
 .btn-large {
   padding: 11px 14px;
@@ -1604,14 +1611,19 @@ input[type="button"].btn-block {
   width: 100%;
 }
 
+
 .btn {
- 	color: #ffffff;
-  	background-color: #a7a9aa;
+ 	color: #333;
+  	background-color: #fff;
   	border-color: #a7a9aa;
 	background-image: none;
 	filter: none;
 	text-shadow: none;
 }
+.btn-fff{
+	color: #fff;
+}
+
 
 .btn:hover,
 .btn:focus,
@@ -1619,6 +1631,7 @@ input[type="button"].btn-block {
   background-color: #9a9c9d;
   border-color: #8d9091;
 }
+
 
 .btn.disabled:hover,
 .btn[disabled]:hover,

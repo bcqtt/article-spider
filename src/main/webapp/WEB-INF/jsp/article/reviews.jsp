@@ -14,8 +14,8 @@
 		</div>
 		<div class="box-content">
 			<!-- 内容 -->
-			<button class="btn btn-large btn-primary">开启爬虫</button>
-			<button class="btn btn-large btn-primary">结束爬虫</button>
+			<button class="btn btn-fff btn-large btn-primary">开启爬虫</button>
+			<button class="btn btn-fff btn-large btn-primary">结束爬虫</button>
 		</div>
 	</div>
 </div>

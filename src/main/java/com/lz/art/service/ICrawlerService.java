@@ -11,4 +11,6 @@ public interface ICrawlerService {
 
 	public DataNotyOptions saveCrawler(Crawler crawler, String opt);
 
+	public Crawler findById(int id);
+
 }

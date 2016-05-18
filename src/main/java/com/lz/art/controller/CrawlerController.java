@@ -41,5 +41,14 @@ public class CrawlerController {
 		return dno;
 	}
 	
+	@RequestMapping(value="/editCrawler")
+	@ResponseBody
+	public Crawler editCrawler(int id){
+		Crawler crawler = crawlerService.findById(id);
+		return crawler;
+	}
+	
+	
+	
 
 }

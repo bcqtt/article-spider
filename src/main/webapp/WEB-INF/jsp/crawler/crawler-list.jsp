@@ -17,7 +17,7 @@
 			<a id="addCrawlerBtn" href="#crawlerModal" class="quick-button-small span1" data-toggle="modal"> <i class="icon-plus"></i>
 				<p>新增</p>
 			</a> 
-			<a class="quick-button-small span1"> <i class="icon-pencil"></i>
+			<a id="editCrawlerBtn" href="#crawlerModal" class="quick-button-small span1" data-toggle="modal"> <i class="icon-pencil"></i>
 				<p>编辑</p>
 			</a> 
 			<a class="quick-button-small span1"> <i class="icon-play"></i>
@@ -47,28 +47,30 @@
 				<div class="control-group">
 					<label class="control-label" for="focusedInput">名称</label>
 					<div class="controls">
-						<input class="input-xlarge focused" id="crawlerName" name="name" type="text" value="">
+						<input class="input-xlarge focused" id="crawlerName" name="name" type="text" value="" />
 					</div>
 				</div>
 				<div class="control-group">
 					<label class="control-label">初始URL</label>
 					<div class="controls">
-						<input class="input-xlarge focused" id="startUrl" name="startUrl" type="text" value="">
+						<input class="input-xlarge focused" id="startUrl" name="startUrl" type="text" value="" />
 					</div>
 				</div>
 				<div class="control-group">
 					<label class="control-label">开始URL模板</label>
 					<div class="controls">
-						<input class="input-xlarge focused" id="startUrlTemplate" name="startUrlTemplate" type="text" value="">
+						<input class="input-xlarge focused" id="startUrlTemplate" name="startUrlTemplate" type="text" value="" />
 					</div>
 				</div>
 				<div class="control-group">
 					<label class="control-label">目标URL模板</label>
 					<div class="controls">
-						<input class="input-xlarge focused" id="targetUrlTemplate" name="targetUrlTemplate" type="text" value="">
+						<input class="input-xlarge focused" id="targetUrlTemplate" name="targetUrlTemplate" type="text" value="" />
 					</div>
 				</div>
 			</fieldset>
+			<input type="hidden" id="crawlerId" name="id" value="" />
+			<input type="hidden" id="crawlerStatus" name="status" value="" />
 		</form>
 	</div>
 	<div class="modal-footer">

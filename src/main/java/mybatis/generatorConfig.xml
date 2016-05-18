@@ -16,18 +16,18 @@
     				 password="root" />
     				
     <javaModelGenerator targetPackage="com.lz.art.pojo" 
-    					targetProject="article/src/main/java" >
+    					targetProject="article-spider/src/main/java" >
     	 <property name="enableSubPackages" value="true"/>
  		 <property name="trimStrings" value="true"/>
     </javaModelGenerator>
     					
     <sqlMapGenerator targetPackage="com.lz.art.mapping" 
-    				 targetProject="article/src/main/java"  >
+    				 targetProject="article-spider/src/main/java"  >
     	<property name="enableSubPackages" value="true"/>				 
 	</sqlMapGenerator>
     				 
     <javaClientGenerator targetPackage="com.lz.art.dao" 
-    					 targetProject="article/src/main/java" type="XMLMAPPER" >
+    					 targetProject="article-spider/src/main/java" type="XMLMAPPER" >
     	<property name="enableSubPackages" value="true"/>
     </javaClientGenerator>
     

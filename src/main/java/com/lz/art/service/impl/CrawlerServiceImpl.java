@@ -31,13 +31,21 @@ public class CrawlerServiceImpl implements ICrawlerService {
 		int n = 0;
 		if(opt.equals("add")){
 			n = crawlerMapper.insert(crawler);
-		}else if(opt.equals("edit")){}
+		}else if(opt.equals("edit")){
+			n = crawlerMapper.updateByPrimaryKeySelective(crawler);
+		}
 		if(n>0){
 			dno = new DataNotyOptions("success");
 		}else{
 			dno = new DataNotyOptions("error");
 		}
 		return dno;
+	}
+
+
+	@Override
+	public Crawler findById(int id) {
+		return crawlerMapper.selectByPrimaryKey(id);
 	}
 
 }
