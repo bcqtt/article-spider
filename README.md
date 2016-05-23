@@ -1,5 +1,5 @@
 # article-spider
-###网络爬虫-webmagic-bootstrap
+###(JAVA项目)网络爬虫-webmagic-bootstrap
 
 ###项目基本功能简介：
 * 1、支持网页爬虫
