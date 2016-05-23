@@ -71,4 +71,10 @@ public interface ReviewsMapper {
 
 	/** start manaul programer **/
 	List<Reviews> pageOfReviews();
+
+	/**************************
+	 * start mamual programing
+	 * @param date 
+	 *************************/
+	List<Reviews> selectByFullText(@Param("searchText") String searchText, @Param("date")String date);
 }

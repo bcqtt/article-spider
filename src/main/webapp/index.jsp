@@ -20,11 +20,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!-- end: Mobile Specific -->
 	
 	<!-- start: CSS -->
-	<link id="bootstrap-style" href="ui/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link id="bootstrap-style" href="ui/bootstrap/css/bootstrap.css" rel="stylesheet">
 	<link id="bootstrap-table-css" href="ui/bootstrap/table/bootstrap-table.css" rel="stylesheet">
 	<link href="ui/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
 	<link id="base-style" href="ui/bootstrap/css/style.css" rel="stylesheet">
 	<link id="base-style-responsive" href="ui/bootstrap/css/style-responsive.css" rel="stylesheet">
+
 	<!-- end: CSS -->
 	
 
@@ -75,6 +76,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<script src="ui/bootstrap/js/retina.js"></script>
 	<script src="ui/bootstrap/table/bootstrap-table.js"></script>
 	<script src="ui/bootstrap/table/bootstrap-table-locale-all.js"></script>
+	
 	<script src="ui/js/global.js"></script>
 	
 	<!-- end: JavaScript-->
@@ -130,6 +132,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</p>
 
 	</footer>
+
 	
+
 </body>
 </html>

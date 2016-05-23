@@ -28,8 +28,8 @@ public class ReviewController {
 	
 	@RequestMapping(value="/reviewsList")
 	@ResponseBody
-	public List<Reviews> reviewsList(){
-		List<Reviews> list = reviewsService.pageOfReviews();
+	public List<Reviews> reviewsList(String searchText,String date){
+		List<Reviews> list = reviewsService.pageOfReviews(searchText,date);
 		return list;
 	}
 	

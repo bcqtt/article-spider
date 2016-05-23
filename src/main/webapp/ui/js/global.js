@@ -40,7 +40,6 @@
 			dataType: 'json',
 			url: options.url,
 			success: function(responseText) {
-				console.log(options.tableid)
 				if(options.tableid != undefined){
 					$(options.tableid).bootstrapTable('refresh');
 				}

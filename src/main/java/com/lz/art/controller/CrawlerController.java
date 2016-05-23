@@ -41,11 +41,18 @@ public class CrawlerController {
 		return dno;
 	}
 	
-	@RequestMapping(value="/editCrawler")
+	@RequestMapping(value="/startCrawler")
 	@ResponseBody
-	public Crawler editCrawler(int id){
-		Crawler crawler = crawlerService.findById(id);
-		return crawler;
+	public DataNotyOptions startCrawler(Crawler crawler){
+		DataNotyOptions dno = crawlerService.startCrawler(crawler);
+		return dno;
+	}
+	
+	@RequestMapping(value="/stopCrawler")
+	@ResponseBody
+	public DataNotyOptions stopCrawler(String id){
+		DataNotyOptions dno = crawlerService.stopCrawler(id);
+		return dno;
 	}
 	
 	
