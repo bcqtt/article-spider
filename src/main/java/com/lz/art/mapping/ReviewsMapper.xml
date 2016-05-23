@@ -287,15 +287,16 @@
   </update>
   
   <!-- start manual programing -->
-  <select id="selectByFullText" parameterType="java.lang.String" resultMap="BaseResultMap">
+  <select id="selectByFullText" parameterType="map" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from reviews where 1=1
     <if test="searchText != null">
     	and MATCH(review, reviewer) AGAINST(#{searchText})
     </if>
-    <if test="date != null">
-    	and date=#{date}
+    <if test="startDate != null and endDate!=null">
+    	and date between #{startDate} and #{endDate}
     </if>
+    order by date DESC
   </select>
 </mapper>

@@ -42,8 +42,15 @@ $(document).ready(function(){
 	
 	$("#searchReviewBtn").on("click",function(){
 		var searchText = $("#searchText").val();
+		var startDate = $("#startDate").val();
+		var endDate = $("#endDate").val();
 		var parameter = {
-			url: "reviews/reviewsList?searchText=" + searchText,
+			url: "reviews/reviewsList",
+			query: {
+				searchText: searchText,
+				startDate: startDate,
+				endDate: endDate
+			}
 		};
 		$('#reviews-table').bootstrapTable('refresh', parameter);
 	});

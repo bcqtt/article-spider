@@ -2,6 +2,7 @@ package com.lz.art.service.impl;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Resource;
 
@@ -20,9 +21,9 @@ public class ReviewsServiceImpl implements IReviewsService {
 	private ReviewsMapper reviewsMapper ;
 	
 
-	public List<Reviews> pageOfReviews(String searchText,String date) {
+	public List<Reviews> pageOfReviews(Map<String,String> map) {
 		//List<Reviews> list = reviewsMapper.selectByExample(null);
-		List<Reviews> list = reviewsMapper.selectByFullText(searchText,date);
+		List<Reviews> list = reviewsMapper.selectByFullText(map);
 		return list;
 	}
 

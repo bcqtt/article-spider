@@ -12,7 +12,7 @@ public class ContentController {
 	public ModelAndView goToContent(){
 		ModelAndView model = new ModelAndView();
 		model.addObject("object", "地铁每周统计");
-		model.setViewName("WEB-INF/jsp/content2");
+		model.setViewName("WEB-INF/jsp/content");
 		return model;
 	}
 	

@@ -16,6 +16,7 @@ $(function(){
 			<li><a target="article/articleList"><i class="icon-envelope"></i><span class="hidden-tablet"> 文章列表</span></a></li>
 			<li><a target="reviews/reviewsView"><i class="icon-tasks"></i><span class="hidden-tablet"> 评论信息列表</span></a></li>
 			<li><a target="crawler/crawlerView"><i class="icon-tasks"></i><span class="hidden-tablet"> 爬虫配置</span></a></li>
+			<!-- 
 			<li><a href="ui/bootstrap/ui.html"><i class="icon-eye-open"></i><span class="hidden-tablet"> UI Features</span></a></li>
 			<li><a href="ui/bootstrap/widgets.html"><i class="icon-dashboard"></i><span class="hidden-tablet"> Widgets</span></a></li>
 			<li>
@@ -35,6 +36,7 @@ $(function(){
 			<li><a href="ui/bootstrap/file-manager.html"><i class="icon-folder-open"></i><span class="hidden-tablet"> File Manager</span></a></li>
 			<li><a href="ui/bootstrap/icon.html"><i class="icon-star"></i><span class="hidden-tablet"> Icons</span></a></li>
 			<li><a href="ui/bootstrap/login.html"><i class="icon-lock"></i><span class="hidden-tablet"> Login Page</span></a></li>
+			 -->
 		</ul>
 	</div>
 </div>

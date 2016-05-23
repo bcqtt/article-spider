@@ -1,8 +1,11 @@
 package com.lz.art.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,8 +31,14 @@ public class ReviewController {
 	
 	@RequestMapping(value="/reviewsList")
 	@ResponseBody
-	public List<Reviews> reviewsList(String searchText,String date){
-		List<Reviews> list = reviewsService.pageOfReviews(searchText,date);
+	public List<Reviews> reviewsList(String searchText,HttpServletRequest request){
+		String startDate = request.getParameter("startDate");
+		String endDate = request.getParameter("endDate");
+		Map<String,String> map= new HashMap<String,String>();
+		map.put("searchText", searchText);
+		map.put("startDate", startDate);
+		map.put("endDate", endDate);
+		List<Reviews> list = reviewsService.pageOfReviews(map);
 		return list;
 	}
 	

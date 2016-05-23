@@ -3,6 +3,8 @@ package com.lz.art.dao;
 import com.lz.art.pojo.Reviews;
 import com.lz.art.pojo.ReviewsExample;
 import java.util.List;
+import java.util.Map;
+
 import org.apache.ibatis.annotations.Param;
 
 public interface ReviewsMapper {
@@ -76,5 +78,5 @@ public interface ReviewsMapper {
 	 * start mamual programing
 	 * @param date 
 	 *************************/
-	List<Reviews> selectByFullText(@Param("searchText") String searchText, @Param("date")String date);
+	List<Reviews> selectByFullText(Map<String, String> map);
 }
