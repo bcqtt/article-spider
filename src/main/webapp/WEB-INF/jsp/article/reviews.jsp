@@ -15,8 +15,8 @@
 		<div class="box-content">
 			<!-- 内容 -->	
 			关键字：<input class="input-xlarge focused" id="searchText" type="text" value="" style="margin-bottom:0;" >
-			开始时间：<input class="input-xlarge focused" id="startDate" type="text" value="" style="margin-bottom:0;" >
-			结束时间：<input class="input-xlarge focused" id="endDate" type="text" value="" style="margin-bottom:0;" >
+			开始时间：<input class="input-xlarge datepicker hasDatepicker" id="startDate" type="text" value="" style="margin-bottom:0;" >
+			结束时间：<input class="input-xlarge datepicker hasDatepicker" id="endDate" type="text" value="" style="margin-bottom:0;" >
 			<button class="btn btn-primary" id="searchReviewBtn"><i class="halflings-icon white search"></i>搜索</button>
 		</div>
 	</div>

@@ -54,7 +54,13 @@ public class AmazonReviewProcessor implements PageProcessor {
 			Reviews review = new Reviews();
 			review.setId(StringHelper.getUUID());
 			review.setReviewer(reviewer);
-			review.setReview(reviews.get(i));
+			
+			String str = reviews.get(i);
+			if(str.indexOf("\\xF0\\x9F\\x98\\x80On") > -1){
+				continue;
+			}
+			
+			review.setReview(str);
 			review.setDate(date);
 			String start = starts.get(i);
 			Float start_ = (float) 0.0 ;
