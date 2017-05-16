@@ -36,7 +36,8 @@
     <table schema="article" tableName="digest" domainObjectName="Digest"><property name="ignoreQualifiersAtRuntime" value="true"/></table>
     <table schema="article" tableName="url" domainObjectName="Url"><property name="ignoreQualifiersAtRuntime" value="true"/></table>
     <table schema="article" tableName="reviews" domainObjectName="Reviews"><property name="ignoreQualifiersAtRuntime" value="true"/></table>
-     -->
     <table schema="article" tableName="crawler" domainObjectName="Crawler"><property name="ignoreQualifiersAtRuntime" value="true"/></table>
+     -->
+    <table schema="article" tableName="account" domainObjectName="Account"><property name="ignoreQualifiersAtRuntime" value="true"/></table>
   </context>
 </generatorConfiguration>

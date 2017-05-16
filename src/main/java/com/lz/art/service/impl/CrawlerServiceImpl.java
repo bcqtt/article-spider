@@ -9,15 +9,10 @@ import org.springframework.stereotype.Service;
 import com.lz.art.common.SpiderMap;
 import com.lz.art.common.DataNotyOptions;
 import com.lz.art.common.StringHelper;
-import com.lz.art.crawler.AmazonReviewProcessor;
 import com.lz.art.dao.CrawlerMapper;
 import com.lz.art.pojo.Crawler;
 import com.lz.art.service.ICrawlerService;
 import com.lz.art.thread.StartAmazonCrawlerThread;
-
-import sun.nio.ch.sctp.SctpChannelImpl;
-import us.codecraft.webmagic.Spider;
-import us.codecraft.webmagic.processor.PageProcessor;
 
 @Service("crawlerService")
 public class CrawlerServiceImpl implements ICrawlerService {

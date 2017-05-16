@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:cache="http://www.springframework.org/schema/cache"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  
+                        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+        
+	<bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">    
+        <property name="maxIdle" value="${redis.maxIdle}" />
+        <property name="maxTotal" value="${redis.maxActive}" />
+        <property name="maxWaitMillis" value="${redis.maxWait}" />
+        <property name="testOnBorrow" value="${redis.testOnBorrow}" />
+    </bean>    
+    
+    <bean id="jedisConnectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory"    
+        p:host-name="${redis.host}" 
+        p:port="${redis.port}" 
+        p:password="${redis.pass}"  
+        p:pool-config-ref="jedisPoolConfig"/>    
+        
+    <bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate">  
+        <property name="connectionFactory" ref="jedisConnectionFactory" />  
+    </bean>
+    
+    <bean id="jedisPool" class="redis.clients.jedis.JedisPool">
+        <constructor-arg index="0" ref="jedisPoolConfig" />
+        <constructor-arg index="1" value="${redis.host}" type="java.lang.String"/>
+        <constructor-arg index="2" value="${redis.port}" type="int" />
+    </bean>
+    
+    <!-- jedis uri信息配置 -->
+	<bean id="uri" class="java.net.URI">
+	     <!-- jedis URI配置   redis://redis:password@ip:port/database   -->
+	    <constructor-arg index="0" value="redis://redis:123456@192.168.87.132:6379/2" />
+	</bean>
+	<bean id="jedisShardInfo" class="redis.clients.jedis.JedisShardInfo">
+	    <constructor-arg index="0" ref="uri" />
+	</bean>
+    
+    <!-- jedis集群部署 -->
+    <bean id="shardedJedisPool" class="redis.clients.jedis.ShardedJedisPool" destroy-method="destroy">
+        <constructor-arg ref="jedisPoolConfig" />
+        <constructor-arg>
+            <list>
+                <bean class="redis.clients.jedis.JedisShardInfo">
+                    <constructor-arg index="0" ref="uri" />
+                </bean>
+                <!-- 
+                <bean class="redis.clients.jedis.JedisShardInfo">
+                    <constructor-arg index="0" value="${redis.host}" />
+					<constructor-arg index="1" value="${redis.port}" />
+					<constructor-arg index="2" value="${redis.timeout}" />
+					<constructor-arg index="3" value="1" />
+					<property name="password" value="${redis.pass}"></property>
+                </bean>
+                <bean class="redis.clients.jedis.JedisShardInfo">
+                    <constructor-arg index="0" value="${redis.host}" />
+					<constructor-arg index="1" value="${redis.port}" />
+					<constructor-arg index="2" value="${redis.timeout}" />
+					<constructor-arg index="3" value="1" />
+					<property name="password" value="${redis.pass}"></property>
+                </bean>
+                <bean class="redis.clients.jedis.JedisShardInfo">
+                    <constructor-arg index="0" value="${redis.host}" />
+					<constructor-arg index="1" value="${redis.port}" />
+					<constructor-arg index="2" value="${redis.timeout}" />
+					<constructor-arg index="3" value="1" />
+					<property name="password" value="${redis.pass}"></property>
+                </bean>
+                 -->
+            </list>
+        </constructor-arg>
+    </bean>
+    
+</beans>

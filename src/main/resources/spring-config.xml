@@ -13,8 +13,13 @@
                         http://www.springframework.org/schema/cache/spring-cache.xsd
                         http://www.springframework.org/schema/aop 
 						http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
-	<!-- 自动扫描 -->
-	<context:component-scan base-package="com.lz.art" />
+						
+    <context:property-placeholder location="classpath:jdbc.properties,classpath:redis.properties" />
+	
+	<context:annotation-config />
+    
+	<!-- Spring Bean 自动扫描 -->
+	<context:component-scan base-package="com.lz.art"/>
 	
 	<!-- 开启aop -->
 	<aop:aspectj-autoproxy proxy-target-class="true" /> 
@@ -27,5 +32,8 @@
 	
 	<!-- EHCache 
 	<import resource="spring-cache.xml" /> -->
+	
+	<!-- Spring Redis -->
+	<import resource="spring-redis.xml" />
 		
 </beans>

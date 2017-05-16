@@ -9,16 +9,9 @@
 					        http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
 	                        http://www.springframework.org/schema/aop 
 	     					http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
-        	    	
-	<!-- 引入数据库连接信息配置文件 -->
-	<bean id="propertyConfigurer"
-		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-		<property name="location" value="classpath:jdbc.properties" />
-	</bean>
 
 	<!-- 定义数据源 -->
-	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
-		destroy-method="close">
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
 		<property name="driverClassName" value="${driver}" />
 		<property name="url" value="${url}" />
 		<property name="username" value="${username}" />
