@@ -1,4 +1,4 @@
-package com.lz.art.redis;
+package com.lz.redis;
 
 import java.util.HashMap;
 import java.util.List;

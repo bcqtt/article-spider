@@ -1,4 +1,4 @@
-package com.lz.art.redis;
+package com.lz.redis;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;

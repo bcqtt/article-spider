@@ -1,4 +1,4 @@
-package com.lz.art.redis;
+package com.lz.redis;
 
 import org.springframework.dao.DataAccessException;
 import org.springframework.data.redis.connection.RedisConnection;
