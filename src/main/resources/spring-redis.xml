@@ -34,7 +34,7 @@
     <!-- jedis uri信息配置 -->
 	<bean id="uri" class="java.net.URI">
 	     <!-- jedis URI配置   redis://redis:password@ip:port/database   -->
-	    <constructor-arg index="0" value="redis://redis:123456@192.168.87.132:6379/2" />
+	    <constructor-arg index="0" value="redis://redis:123456@192.168.87.132:6379/0" />
 	</bean>
 	<bean id="jedisShardInfo" class="redis.clients.jedis.JedisShardInfo">
 	    <constructor-arg index="0" ref="uri" />

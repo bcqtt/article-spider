@@ -19,7 +19,7 @@
 	<context:annotation-config />
     
 	<!-- Spring Bean 自动扫描 -->
-	<context:component-scan base-package="com.lz.art"/>
+	<context:component-scan base-package="com.lz"/>
 	
 	<!-- 开启aop -->
 	<aop:aspectj-autoproxy proxy-target-class="true" /> 

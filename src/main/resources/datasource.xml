@@ -59,16 +59,13 @@
        class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
 
 	<!-- (事务管理)transaction manager, use JtaTransactionManager for global tx -->
-	<bean id="transactionManager"
-		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource" ref="dataSource" />
 	</bean>
 	
 	<!-- 事务配置 -->
 	<aop:config>
-		<aop:pointcut
-			expression="execution(* com.gionee.baserom.search.service.impl.*Impl.*(..))"
-			id="pointcut" />
+		<aop:pointcut id="pointcut" expression="execution(* com.gionee.baserom.search.service.impl.*Impl.*(..))" />
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="pointcut" />
 	</aop:config>
 	<tx:advice id="txAdvice" transaction-manager="transactionManager">

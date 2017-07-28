@@ -9,7 +9,7 @@ import org.springframework.test.context.junit4.AbstractJUnit4SpringContextTests;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.lz.art.pojo.Article;
-import com.lz.art.redis.ArticleRedisDao;
+import com.lz.redis.ArticleRedisDao;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath*:spring-config.xml"}) 
@@ -27,7 +27,7 @@ public class RedisTest extends AbstractJUnit4SpringContextTests {
         Assert.assertTrue(res); 
     } 
     
-    //@Test 
+    @Test 
     public void testUpdateArticle() { 
     	Article art = new Article(); 
     	art.setId("1"); 
@@ -46,7 +46,7 @@ public class RedisTest extends AbstractJUnit4SpringContextTests {
     	}
     }
     
-    @Test 
+    //@Test 
     public void testDelArticle() { 
     	boolean res = articleRedisDao.deleteArticle("1");
     	Assert.assertTrue(res); 
