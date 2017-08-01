@@ -18,12 +18,12 @@
     -->
     <!-- service缓存 -->
 	<cache name="serviceCache" eternal="false" maxElementsInMemory="100"
-		overflowToDisk="false" diskPersistent="false" timeToIdleSeconds="0"
+		overflowToDisk="false" diskPersistent="false" 
 		timeToLiveSeconds="300" memoryStoreEvictionPolicy="LRU" />
 	
 	 <!-- 采集源缓存 -->
 	<cache name="sourceUrlCache" eternal="false" maxElementsInMemory="100"
-		overflowToDisk="false" diskPersistent="false" timeToIdleSeconds="0"
-		timeToLiveSeconds="0" memoryStoreEvictionPolicy="LRU" />
+		overflowToDisk="false" diskPersistent="false" 
+		timeToLiveSeconds="120" memoryStoreEvictionPolicy="LRU" />
 
 </ehcache>   

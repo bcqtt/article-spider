@@ -1,0 +1,15 @@
+﻿child parent
+Tom Lucy
+Tom Jack
+Jone Lucy
+Jone Jack
+Lucy Mary
+Lucy Ben
+Jack Alice
+Jack Jesse
+Terry Alice
+Terry Jesse
+Philip Terry
+Philip Alma
+Mark Terry
+Mark Alma

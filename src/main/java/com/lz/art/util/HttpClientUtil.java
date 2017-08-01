@@ -1,4 +1,4 @@
-package com.gionee.baserom.search.util;
+package com.lz.art.util;
 
 import java.io.IOException;
 import java.io.InputStream;
