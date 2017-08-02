@@ -42,9 +42,11 @@ public class StJoin {
 				childname = values[0];
 				parentname = values[1];
 				relationtype = "1" ; //区分左右表的标志
+				System.out.println(values[1] + "  " + relationtype + "+" + childname + "+" + parentname);
 				context.write(new Text(values[1]), new Text(relationtype + "+" + childname + "+" + parentname));
 				
 				relationtype = "2" ; //区分左右表的标志
+				System.out.println(values[0] + "  " + relationtype + "+" + childname + "+" + parentname);
 				context.write(new Text(values[0]), new Text(relationtype + "+" + childname + "+" + parentname));
 			}
 		}
