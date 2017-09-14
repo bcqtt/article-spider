@@ -1,4 +1,4 @@
-# article-spider
+# article-spider 为技术实练项目
 ###(JAVA项目)网络爬虫-webmagic-bootstrap
 
 ###项目基本功能简介：
@@ -7,4 +7,4 @@
 * 3、支持全文搜索
 * 4、支持hadoop分布式平台
 * 5、支持redis分布式缓存
-
+* 6、集成微信公众号开发
