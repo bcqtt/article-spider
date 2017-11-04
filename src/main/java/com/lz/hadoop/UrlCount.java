@@ -20,18 +20,22 @@ import org.apache.hadoop.util.ToolRunner;
 
 import com.lz.hadoop.WordCount.Reduce;
 
-public class WordCountNew extends Configured implements Tool{
+public class UrlCount extends Configured implements Tool{
 	
 	public static class Map extends Mapper<LongWritable, Text, Text, IntWritable> {
 		private final static IntWritable one = new IntWritable(1);
-		private Text word = new Text();
+		private Text sqlStr = new Text();
 		
 		public void map(LongWritable key, Text value, Context context) throws IOException,InterruptedException{
 			String line = value.toString();
-			StringTokenizer tokenizer = new StringTokenizer(line);
+			StringTokenizer tokenizer = new StringTokenizer(line," - ");
 			while(tokenizer.hasMoreTokens()){
-				word.set(tokenizer.nextToken());
-				context.write(word, one);
+				sqlStr.set(tokenizer.nextToken());
+				if(sqlStr.toString().contains("重定向的URL")){
+					context.write(sqlStr, one);
+				}else{
+					continue;
+				}
 			}
 		}
 	}
@@ -50,7 +54,7 @@ public class WordCountNew extends Configured implements Tool{
 	@Override
 	public int run(String[] args) throws Exception {
 		Job job = new Job(getConf());
-		job.setJarByClass(WordCountNew.class);
+		job.setJarByClass(UrlCount.class);
 		job.setJobName("wordcount-new");
 		
 		job.setOutputKeyClass(Text.class);
@@ -72,7 +76,7 @@ public class WordCountNew extends Configured implements Tool{
 	}
 	
 	public static void main(String args[]) throws Exception {
-		int ret = ToolRunner.run(new WordCountNew(), args);
+		int ret = ToolRunner.run(new UrlCount(), args);
 		System.exit(ret);
 	}
 	
