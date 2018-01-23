@@ -1,0 +1,25 @@
+1、解压缩opencv-3.4.0.zip(源码版)到指定目录，我的是/usr/opencv
+2、编译opencv
+	2.1 安装cmake:
+		看看本机有没有安装cmake: cmake --version  ,如果有输出版本信息则已经安装。
+		如果没有cmake,下载Binary distributions版本cmake-3.10.2-Linux-x86_64.tar.gz。解压到/usr/local
+		配置PATH:  vim /etc/profile   在PATH环境变量中加入如下内容：:/usr/local/cmake-3.10.2-Linux-x86_64/bin
+		更新环境变量：source /etc/profile
+	2.2 安装build-essential
+		安装aptitude: sudo apt-get install aptitude
+		安装build-essential：sudo aptitude install build-essential
+		如果选择yes无法通过，再试选择no,然后出现的提示选择yes.等待安装完毕。
+	2.3 编译opencv
+		进入/usr/opencv/opencv-3.4.0
+		删除CMakeCache.txt，新建目录build,进入build
+		执行：make -j8  ，等待编译完成
+3、添加到环境变量
+	执行： vim /etc/ld.so.conf.d/opencv.conf
+	输入opencv的库路径：/usr/opencv/opencv-3.4.0/build/lib
+	保存退出
+	在/etc/profile中加入：
+		export PKG_CONFIG_PATH=/usr/opencv/opencv-3.4.0/build/lib/pkgconfig:$PKG_CONFIG_PATH
+		export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/opencv/opencv-3.4.0/build/lib
+	(其中libopencv_java340.so，在/usr/opencv/opencv-3.4.0/build/lib目录下)
+	执行：source /etc/profile
+	执行：sudo ldconfig
