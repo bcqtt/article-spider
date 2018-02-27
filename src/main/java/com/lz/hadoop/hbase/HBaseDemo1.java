@@ -41,7 +41,7 @@ public class HBaseDemo1 {
         Configuration conf = HBaseConfiguration.create();
 
         // 设置连接参数：HBase数据库所在的主机IP
-        conf.set("hbase.zookeeper.quorum", "66.66.66.10");
+        conf.set("hbase.zookeeper.quorum", "66.66.66.10,66.66.66.11,66.66.66.12");
         // 设置连接参数：HBase数据库使用的端口
         conf.set("hbase.zookeeper.property.clientPort", "2181");
         
