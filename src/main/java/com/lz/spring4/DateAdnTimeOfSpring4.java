@@ -10,7 +10,7 @@ import java.time.format.DateTimeFormatter;
 import java.time.temporal.IsoFields;
 
 /**
- * spring4 新特性之时间控制
+ * java8 新特性之时间控制
  * Function:
  * @author : laizhiwen
  * Date: 2018年2月27日
