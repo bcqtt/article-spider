@@ -13,7 +13,6 @@ import java.time.temporal.IsoFields;
  * java8 新特性之时间控制
  * Function:
  * @author : laizhiwen
- * Date: 2018年2月27日
  */
 public class DateAdnTimeOfSpring4 {
 	
