@@ -19,8 +19,8 @@ public class Test {
 			File file = new File("C:\\Users\\gionee\\Desktop\\dog.jpg");
 			BufferedImage b1 = ImageIO.read(file);
 			//模糊
-			GaussianFilter filter = new GaussianFilter(35);
-			BufferedImage blurredImage = filter.filter(b1, new BufferedImage(b1.getWidth(), b1.getHeight(), BufferedImage.TYPE_INT_ARGB));
+			GaussianFilter filter = new GaussianFilter(65);
+			BufferedImage blurredImage = filter.filter(b1, new BufferedImage(b1.getWidth(), b1.getHeight(), BufferedImage.TYPE_INT_RGB));
 			//保存处理后的图
 			File newFile = new File("C:\\Users\\gionee\\Desktop\\dog-blur.jpg");
 			ImageIO.write(blurredImage, "jpg", newFile);
