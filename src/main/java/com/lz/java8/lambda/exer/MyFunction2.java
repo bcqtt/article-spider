@@ -1,4 +1,4 @@
-package com.lz.java8.exer;
+package com.lz.java8.lambda.exer;
 
 public interface MyFunction2<T, R> {
 

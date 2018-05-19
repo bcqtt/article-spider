@@ -1,4 +1,4 @@
-package com.lz.java8;
+package com.lz.java8.lambda;
 
 @FunctionalInterface
 public interface MyFun {

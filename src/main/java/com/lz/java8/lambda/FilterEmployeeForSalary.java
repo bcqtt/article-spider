@@ -1,4 +1,4 @@
-package com.lz.java8;
+package com.lz.java8.lambda;
 
 public class FilterEmployeeForSalary implements MyPredicate<Employee> {
 

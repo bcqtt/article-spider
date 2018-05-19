@@ -1,4 +1,4 @@
-package com.lz.java8;
+package com.lz.java8.lambda;
 
 import java.util.ArrayList;
 import java.util.Comparator;

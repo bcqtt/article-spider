@@ -1,4 +1,4 @@
-package com.lz.java8.exer;
+package com.lz.java8.lambda.exer;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -6,7 +6,7 @@ import java.util.List;
 
 import org.junit.Test;
 
-import com.lz.java8.Employee;
+import com.lz.java8.lambda.Employee;
 
 public class TestLambda {
 	
