@@ -7,8 +7,6 @@ import org.springframework.web.client.RestTemplate;
  * Spring RestTemplate工具类
  * 
  * @packge com.wlyd.fmcgwms.util.api.RestTemplateUtils
- * @date 2016年6月13日 下午4:14:23
- * @author pengjunlin
  * @comment
  * @update
  */
