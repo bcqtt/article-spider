@@ -8,10 +8,6 @@ import java.io.InputStreamReader;
 import java.util.List;
 
 import com.google.gson.Gson;
-import com.sf.kafka.api.produce.IKafkaProducer;
-import com.sf.kafka.api.produce.ProduceConfig;
-import com.sf.kafka.api.produce.ProduceOptionalConfig;
-import com.sf.kafka.api.produce.ProducerPool;
 
 public abstract class TeskDataLoad {
 	/**
@@ -58,33 +54,6 @@ public abstract class TeskDataLoad {
 	 * @param list
 	 */
 	public abstract <T> void changeAttribute(List<T> list);
-
-	/**
-	 * 写kafka
-	 * @param list
-	 * @param kafkaInfo
-	 */
-	public <T> void writeKafka(List<T> list, KafkaInfo kafkaInfo) {
-		ProduceConfig produceConfig = new ProduceConfig(kafkaInfo.getPoolSize(), kafkaInfo.getMonitorUrl(),
-				kafkaInfo.getClusterName(), kafkaInfo.getTopicTokens());
-		ProduceOptionalConfig optionalConfig = new ProduceOptionalConfig();
-		IKafkaProducer kafkaProducer = new ProducerPool(produceConfig, optionalConfig);
-
-		List<String> jsons = com.google.common.collect.Lists.newArrayList();
-		for (int i = 0; i < list.size(); i++) {
-			T t = list.get(i);
-			jsons.add(new Gson().toJson(t));
-			if (list.size() == 2000 || i == list.size() - 1) {
-				kafkaProducer.batchSendString(kafkaInfo.getTopic(), jsons);
-				jsons = com.google.common.collect.Lists.newArrayList();
-			}
-		}
-	}
 	
-	/**
-	 * 加载kafka信息
-	 * @param modularCode
-	 * @return KafkaInfo
-	 * */
-	public abstract <T> KafkaInfo loadKafkaInfo(String modularCode);
+
 }

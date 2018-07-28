@@ -276,25 +276,6 @@ public class DateUtil {
 		return dateStr.substring(0, dateStr.length() - 1) + "0";
 	}
 	
-	/**
-	 * 返回当前时间对应的时间段值(10分钟一段)  yyyyMMddHHmm
-	 * 	201605120920代表5.12日9:20:00~9:29:59
-	 *  当前时间 201605120925
-	 *      返回201605120920
-	 * 
-	 * @param date  
-	 * @return
-	 */
-	public static Long getTimeRangeByTenMinAsLong(Date date){
-		
-		String dateStr = DateUtil.format(date, DATE_TIME_FORMAT_YMDHM);
-		
-		//最后一位替换为0
-		String key = dateStr.substring(0, dateStr.length() - 1) + "0";
-		
-		return NumberUtil.parseLong(key, 0L);
-	}
-	
 	public static String format(Date date) {
 		return DateFormatUtils.format(date, DATE_TIME_FORMAT);
 	}
