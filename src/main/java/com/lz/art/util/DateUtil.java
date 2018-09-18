@@ -66,7 +66,7 @@ public class DateUtil {
 	}
 	
 	/**
-	 * 返回星期几，0代表星期日,1代表星期一 作者:847792 ...
+	 * 返回星期几，0代表星期日,1代表星期一 
 	 */
 	public static String dayOfWeekChinese(String date) throws ParseException  {
 	    Map<Integer,String> weekMap = new HashMap<>();
