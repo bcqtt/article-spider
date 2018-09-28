@@ -1,0 +1,8 @@
+package java_outer_classname = "LoginApply";
+message LoginApply
+{
+		required string Key=1,
+		required string SendTime=2018-09-27 14:57:55,
+		required string CtrlStatus=1,
+		required string SerialNumber=1000,
+}

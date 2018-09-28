@@ -3,7 +3,7 @@ package com.lz.art.thread;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-import com.lz.redis.RedisLock;
+import com.lz.study.redis.RedisLock;
 
 public class LockTest {
 	//不加锁
