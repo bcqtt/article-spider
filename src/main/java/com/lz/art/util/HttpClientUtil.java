@@ -395,7 +395,7 @@ public class HttpClientUtil {
      * 发送HTTP_POST请求,json格式数据
      * @param url
      * @param body
-     * @return
+     * @return String
      * @throws Exception
      */
     public static String sendPostByJson(String url, String body) throws Exception {

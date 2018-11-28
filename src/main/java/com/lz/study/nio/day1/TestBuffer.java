@@ -46,8 +46,26 @@ public class TestBuffer {
 	}
 	
 	@Test
+	public void test22() {
+		String str = "abcdef";
+		ByteBuffer buf = ByteBuffer.allocate(1024);
+		buf.put(str.getBytes());
+		buf.flip();
+		
+		byte[] dst = new byte[buf.limit()];
+		buf.get(dst, 0, 2);
+		System.out.println(new String(dst, 0, 2));
+		System.out.println(buf.position());
+		
+		buf.flip();
+		System.out.println(buf.position());
+		
+		buf.put("g".getBytes());
+	}
+	
+	@Test
 	public void test2(){
-		String str = "abcde";
+		String str = "abcdef";
 		
 		ByteBuffer buf = ByteBuffer.allocate(1024);
 		
@@ -77,6 +95,12 @@ public class TestBuffer {
 			//获取缓冲区中可以操作的数量
 			System.out.println(buf.remaining());
 		}
+		
+		buf.flip();
+		
+		buf.get(dst, 2, 2);
+		System.out.println(new String(dst, 2, 2));
+		System.out.println(buf.position());
 	}
 	
 	@Test
