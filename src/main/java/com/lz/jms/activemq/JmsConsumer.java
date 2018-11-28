@@ -3,7 +3,10 @@ package com.lz.jms.activemq;
 import javax.jms.Connection;
 import javax.jms.ConnectionFactory;
 import javax.jms.Destination;
+import javax.jms.JMSException;
+import javax.jms.Message;
 import javax.jms.MessageConsumer;
+import javax.jms.MessageListener;
 import javax.jms.Session;
 import javax.jms.TextMessage;
 
@@ -44,6 +47,22 @@ public class JmsConsumer {
             
             //创建消息消费者
             messageConsumer = session.createConsumer(destination);
+            
+//            //实现一个消息的监听器
+//            //实现这个监听器后，以后只要有消息，就会通过这个监听器接收到
+//            messageConsumer.setMessageListener(new MessageListener() {
+//                @Override
+//                public void onMessage(Message message) {
+//                    try {
+//                        //获取到接收的数据
+//                        String text = ((TextMessage)message).getText();
+//                        System.out.println(text);
+//                    } catch (JMSException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//            });
+            
             while (true) {
                 TextMessage textMessage = (TextMessage) messageConsumer.receive(100000);
                 if(textMessage != null){

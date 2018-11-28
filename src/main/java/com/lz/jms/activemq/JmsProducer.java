@@ -81,6 +81,7 @@ public class JmsProducer {
             //通过消息生产者发出消息 
             messageProducer.send(message);
         }
+        System.out.println("发送完毕。");
 
     }
 
