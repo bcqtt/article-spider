@@ -3,8 +3,6 @@ package com.lz.study.netty.serial;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.cn.core.Serializer;
-
 public class Player extends Serializer{
 	
 	private long playerId;
