@@ -6,8 +6,8 @@ import org.junit.Test;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.lz.art.util.DateUtil;
-import com.lz.art.util.HttpClientUtil;
+import com.lz.util.DateUtil;
+import com.lz.util.HttpClientUtil;
 
 public class ChargingTest {
 	

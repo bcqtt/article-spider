@@ -1,4 +1,4 @@
-package com.lz.art.util;
+package com.lz.util;
 
 /**
  * 

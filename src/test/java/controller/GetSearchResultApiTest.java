@@ -28,7 +28,7 @@ import org.apache.http.util.EntityUtils;
 import org.junit.Test;
 
 import com.alibaba.fastjson.JSONObject;
-import com.lz.art.util.HttpUtil;
+import com.lz.util.HttpUtil;
 
 /**
  * 测试查询类的接口

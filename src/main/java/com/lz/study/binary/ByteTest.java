@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
-import com.lz.art.util.ByteUtils;
+import com.lz.util.ByteUtils;
 
 public class ByteTest {
 	

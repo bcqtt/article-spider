@@ -1,4 +1,4 @@
-package com.lz.art.util;
+package com.lz.util;
 
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
