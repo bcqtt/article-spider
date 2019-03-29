@@ -1,5 +1,7 @@
 package rsa;
 
+import java.math.BigInteger;
+
 import org.junit.Test;
 
 import com.lz.study.rsa.AESUtil;
@@ -10,11 +12,15 @@ public class RSATest {
 	
 	@Test
 	public void test1(){
-		
-		
-		
+		byte[] hold = {0x11,0x00};
+		String data = binary(hold, 10);
+		System.out.println(data);
 		
 	}
+	
+	public static String binary(byte[] bytes, int radix) {
+	    return new BigInteger(1, bytes).toString(radix);// 这里的1代表正数
+	  }
 	
 	
 	@Test
