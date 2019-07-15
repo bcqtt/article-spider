@@ -7,7 +7,8 @@ import com.rabbitmq.client.QueueingConsumer;
 
 public class ReceiveLogs {
 
-	private static final String EXCHANGE_NAME = "logs";
+	private static final String EXCHANGE_NAME = "lzw";
+	private static final String LZW_MQ_TEST_QUEUE = "LZW_MQ_TEST_QUEUE";
 
 	public static void main(String[] argv) throws Exception {
 
@@ -17,19 +18,19 @@ public class ReceiveLogs {
 		Channel channel = connection.createChannel();
 
 		channel.exchangeDeclare(EXCHANGE_NAME, "fanout");
-		String queueName = channel.queueDeclare().getQueue();
-		channel.queueBind(queueName, EXCHANGE_NAME, "");
+		channel.queueBind(LZW_MQ_TEST_QUEUE, EXCHANGE_NAME, "");
 
-		System.out.println(" [*] Waiting for messages. To exit press CTRL+C");
+		System.out.println(" 等待消息， 退出请按： CTRL+C");
 
+		//订阅消息
 		QueueingConsumer consumer = new QueueingConsumer(channel);
-		channel.basicConsume(queueName, true, consumer);
+		channel.basicConsume(LZW_MQ_TEST_QUEUE, true, consumer);
 
 		while (true) {
 			QueueingConsumer.Delivery delivery = consumer.nextDelivery();
 			String message = new String(delivery.getBody());
 
-			System.out.println(" [x] Received '" + message + "'");
+			System.out.println(" 接收到消息：" + message);
 		}
 	}
 }

@@ -6,12 +6,13 @@ import com.rabbitmq.client.Channel;
 
 public class EmitLog {
 
-	private static final String EXCHANGE_NAME = "logs";
+	private static final String EXCHANGE_NAME = "lzw";
+	private static final String LZW_MQ_TEST_QUEUE = "LZW_MQ_TEST_QUEUE";
 
 	public static void main(String[] argv) throws Exception {
 		
 		/*
-		 * 发送消息到一个名为“logs”的exchange上，使用“fanout”方式发送，即广播消息，不需要使用queue，发送端不需要关心谁接收
+		 * 发送消息到一个名为“lzw”的exchange上，使用“fanout”方式发送，即广播消息，不需要使用queue，发送端不需要关心谁接收
 		 */
 
 		ConnectionFactory factory = new ConnectionFactory();
@@ -19,12 +20,13 @@ public class EmitLog {
 		Connection connection = factory.newConnection();
 		Channel channel = connection.createChannel();
 
+		channel.queueDeclare(LZW_MQ_TEST_QUEUE, false, false, false, null);
 		channel.exchangeDeclare(EXCHANGE_NAME, "fanout");
 
 		String message = getMessage(argv);
 
 		channel.basicPublish(EXCHANGE_NAME, "", null, message.getBytes());
-		System.out.println(" [x] Sent '" + message + "'");
+		System.out.println(" 发送消息：" + message);
 
 		channel.close();
 		connection.close();
