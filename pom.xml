@@ -89,21 +89,13 @@
 	</properties>
   
     <dependencies>
-    
-	    <dependency>
-            <groupId>jdk.tools</groupId>
-            <artifactId>jdk.tools</artifactId>
-            <version>1.8</version>
-            <scope>system</scope>
-            <systemPath>${JAVA_HOME}/lib/tools.jar</systemPath>
-	    </dependency>
-    
+
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.12</version>
 			<!-- 表示开发的时候引入，发布的时候不会加载此包 -->
-			<scope>test</scope>
+			<scope>compile</scope>
 		</dependency>
 		<!-- spring核心包 -->
 		<dependency>

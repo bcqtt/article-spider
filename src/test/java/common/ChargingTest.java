@@ -41,5 +41,11 @@ public class ChargingTest {
 		}
 		
 	}
+	
+	@Test
+	public void testStr() {
+		String deviceCode = "10082025123456789563";
+		System.out.println(deviceCode.substring(0,4));
+	}
 
 }

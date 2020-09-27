@@ -58,7 +58,7 @@ public class UrlGenerate {
 	String unionId = null;
     String accessToken = null;
     String body = "{\"phone\":\"18589074983\",\"type\":1,\"country_code\":\"+086\",\"code_length\":6}";  //注册用
-    body = "{\"phone\":\"18589074983\",\"type\":2,\"country_code\":\"+086\",\"code_length\":6}";         //登录用
+    body = "{\"phone\":\"18589074983\",\"type\":3,\"country_code\":\"+086\",\"code_length\":6}";         //登录用
     String sigUrl = generateSigUrl(unionId, accessToken, body);
     System.out.println(sigUrl);//appid=100002&timestamp=1552444782580&req_id=1552444782580&sig=D17D7B535145119CD4887E4C8FEC7193
 
@@ -69,7 +69,7 @@ public class UrlGenerate {
 	String unionId = null;
     String accessToken = null;
 //    {"phone":"18589074983","type":1,"code":"111111","country_code":"+086"}
-    String body = "{\"phone\":\"18588402560\",\"type\":1,\"code\":\"111111\",\"country_code\":\"+086\"}";
+    String body = "{\"phone\":\"18589074983\",\"type\":3,\"code\":\"393387\",\"country_code\":\"+086\"}";
     String sigUrl = generateSigUrl(unionId, accessToken, body);
     System.out.println(sigUrl);//appid=100002&timestamp=1552445086566&req_id=1552445086566&sig=1EBB6D0FD3478B18B349D0791FC60ECD
 
@@ -102,9 +102,20 @@ public class UrlGenerate {
 	String unionId = null;
     String accessToken = null;
     //{"phone":"18589074983","country_code":"+086","code":"111111","os_type":"Android","app_version":"v0.5","os_version":"android4.3","hardware_version":"Huawei","app_uuid":"1234567899876543210012345678900"}
-    String body = "{\"phone\":\"18589074983\",\"country_code\":\"+086\",\"code\":\"111111\",\"os_type\":\"Android\",\"app_version\":\"v0.5\",\"os_version\":\"android4.3\",\"hardware_version\":\"Huawei\",\"app_uuid\":\"1234567899876543210012345678900\"}";
+    String body = "{\"phone\":\"17110000007\",\"country_code\":\"+086\",\"code\":\"111111\",\"os_type\":\"Android\",\"app_version\":\"v0.5\",\"os_version\":\"android4.3\",\"hardware_version\":\"Huawei\",\"app_uuid\":\"1234567899876543210012345678900\"}";
     String sigUrl = generateSigUrl(unionId, accessToken, body);
     System.out.println(sigUrl); //appid=100002&timestamp=1552446756309&req_id=1552446756309&sig=451255C36778D881C12D457BC3B4BECD
+
+  }
+  
+  @Test
+  public void testResetPassword() { //5 重置密码
+	String unionId = null;
+    String accessToken = null;
+    //{\"pwd\": \"123456\",\"secret\": \"xxxx\"}
+    String body = "{\"pwd\": \"123456\",\"secret\": \"B3D9E645AB076F1AE9EE218DD379E5C5\"}";
+    String sigUrl = generateSigUrl(unionId, accessToken, body);
+    System.out.println(sigUrl);
 
   }
   
