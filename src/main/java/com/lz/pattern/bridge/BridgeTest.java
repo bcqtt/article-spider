@@ -9,11 +9,12 @@ public class BridgeTest {
 		BagColor yellow = new Yellow();
 		Bag bag = new Wallet();
 		bag.setColor(yellow);
-		bag.getName();
+		System.out.println(bag.getName());
 		
-		BagColor red = new Yellow();
+		BagColor red = new Red();
 		Bag bag2 = new HandBag();
 		bag2.setColor(red);
 		bag2.getName();
+		System.out.println(bag2.getName());
 	}
 }
