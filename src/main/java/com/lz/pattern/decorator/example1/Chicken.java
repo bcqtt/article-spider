@@ -1,5 +1,8 @@
-package com.lz.pattern.decorator;
+package com.lz.pattern.decorator.example1;
 
+/**
+ * 具体构件
+ */
 public class Chicken extends Food {
 	
 	public Chicken(){

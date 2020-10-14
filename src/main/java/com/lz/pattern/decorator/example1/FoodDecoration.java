@@ -1,5 +1,8 @@
-package com.lz.pattern.decorator;
+package com.lz.pattern.decorator.example1;
 
+/**
+ * 抽象装饰
+ */
 public abstract class FoodDecoration extends Food {
 
 	@Override

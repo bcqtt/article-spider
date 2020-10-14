@@ -1,8 +1,8 @@
-package com.lz.pattern.decorator;
+package com.lz.pattern.decorator.example1;
 
 /**
  * 蒸的
- * Function:
+ * Function: 具体装饰
  * @author : laizhiwen
  * Date: 2017年9月29日
  */

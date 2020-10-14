@@ -1,5 +1,8 @@
-package com.lz.pattern.decorator;
+package com.lz.pattern.decorator.example1;
 
+/**
+ * 具体装饰
+ */
 public class RoastFood extends FoodDecoration {
 	
 	private Food food;

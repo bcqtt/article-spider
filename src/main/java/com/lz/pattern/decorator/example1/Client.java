@@ -1,4 +1,4 @@
-package com.lz.pattern.decorator;
+package com.lz.pattern.decorator.example1;
 
 /**
  * 动态给一个对象添加一些额外的职责。

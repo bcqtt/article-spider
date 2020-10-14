@@ -1,9 +1,12 @@
-package com.lz.pattern.decorator;
+package com.lz.pattern.decorator.example1;
 
+/**
+ * 具体构件
+ */
 public class Duck extends Food {
 	
 	public Duck(){
-		desc = "鸡肉";
+		desc = "鸭肉";
 	}
 
 	@Override
