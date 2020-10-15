@@ -7,8 +7,8 @@ public class ConcreteDecorator extends Decorator {
     }
 
     public void operation() {
-        super.operation();
-        addedFunction();
+        super.operation(); //调用原有业务方法
+        addedFunction();   //调用新增的业务方法
     }
 
     public void addedFunction() {
